@@ -4,10 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const index_1 = __importDefault(require("./routes/index"));
 // Set up Express app
 const app = (0, express_1.default)();
 // Listen for requests
 app.listen(3000);
+app.use('/index', index_1.default);
 // Render a view
 app.get('/', (req, res) => {
     res.send('Welcome to Express & TypeScript Server');
